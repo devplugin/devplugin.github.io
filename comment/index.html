@@ -52,17 +52,15 @@
 	<p><a href="https://devplugin.github.io/comment/">Отзывы</a></p>
 	</div>
 	<div class="content">
-	<h2>Магазин</h2>
+	<h2>Отзывы</h2>
 <p>
-	<p>Готовые сервера:
-		<p>Мы не продает готовые сервера, делаем только под заказ по ТЗ.
-	<p>Приватные плагины:
-		<p>WC:Source (private) = 1500
-		<p>NC RPG = 1500
-		<p>Fortnite Dancing = 1000
-		<p>SHOP (3 валюты) = 600
-		<p>MultiGame Mod = 500
+	В коментариях можете оставить свой отзыв.
 </p>
+<form action="{% url 'articles:leave_comment' article.id %}" method="POST">
+	<input type="text" required placeholder="Ваше имя" name="name"><br>
+	<textarea name="text" required="" placeholder="Текст коментария" cols="30" rows="10"></textarea><br>
+	<button type="submit">Оставить коментарий</button>
+</form>
 </div>
 <div class="footer">&copy; Связь в группе https://vk.com/one7hop</div>
 </div>
