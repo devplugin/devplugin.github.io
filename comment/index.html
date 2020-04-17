@@ -41,6 +41,8 @@
 	clear: left; /* Отменяем действие float */
 	}
 </style>
+<link rel="stylesheet" href="ecomment/ecomment.css" type="text/css" media="all">
+<script type="text/javascript" src="ecomment/ecomment.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -56,11 +58,18 @@
 <p>
 	В коментариях можете оставить свой отзыв.
 </p>
-<form action="{% url 'articles:leave_comment' article.id %}" method="POST">
-	<input type="text" required placeholder="Ваше имя" name="name"><br>
-	<textarea name="text" required="" placeholder="Текст коментария" cols="30" rows="10"></textarea><br>
-	<button type="submit">Оставить коментарий</button>
-</form>
+<div class="ecomment_wrapper" rel="http://mysite.com/feedback.html"></div>
+<div class="ecomment_wrapper" rel="http://mysite.com/faq.html"></div>
+<div class="ecomment_wrapper" rel="some_ref_one"></div>
+	<div class="ecomment_wrapper" rel="some_ref_two"></div>
+	<script>
+		// многократное подключение скрипта на странице
+		$('.ecomment_wrapper').each(function(){
+			$(this).ecomment({
+				ref: $(this).attr('rel')
+			});
+		});
+	</script>
 </div>
 <div class="footer">&copy; Связь в группе https://vk.com/one7hop</div>
 </div>
