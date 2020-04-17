@@ -8,7 +8,7 @@
 				settings = $.extend({
 					'ref'		: location.href,
 					'http_ref'	: location.href,
-					'path' 		: '../ecomment.php'
+					'path' 		: '../ecomment/ecomment.php'
 				}, options),
 				query = parseQuery();
 
